@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculatrice</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+	<body>
+		<table>
+			<tr>
+				<td class="calculatrice" id="ecran" colspan = 5> </td>
+			</tr> 
+
+			<tr>
+				<td class="bouton" onclick="afficher(0);">0</td>
+				<td class="bouton" onclick="afficher(1);">1</td>
+				<td class="bouton" onclick="afficher(2);">2</td>
+				<td class="bouton" onclick="afficher(3);">3</td>
+				<td class="bouton" onclick="afficher(4);">4</td>
+			</tr>
+
+			<tr>
+				<td class="bouton" onclick="afficher(5);">5</td>
+				<td class="bouton" onclick="afficher(6);">6</td>
+				<td class="bouton" onclick="afficher(7);">7</td>
+				<td class="bouton" onclick="afficher(8);">8</td>
+				<td class="bouton" onclick="afficher(9);">9</td>
+			</tr>
+
+			<tr>
+				<td class="bouton" onclick="afficher('+');">+</td>
+				<td class="bouton" onclick="afficher('-');">-</td>
+				<td class="bouton" onclick="afficher('&divide;');">&divide;</td>
+				<td class="bouton" onclick="afficher('&times;');">&times;</td>
+				<td class="bouton" onclick="calculer();" id="egal">=</td>
+			</tr>
+		</table>
+
+		<script>
+		function  afficher(chiffre){
+			mon_ecran = document.getElementById("ecran");
+			mon_ecran.innerHTML += chiffre;
+		}
+		function calculer(){
+			mon_ecran = document.getElementById("ecran");
+			try{
+				mon_ecran.innerHTML = eval(mon_ecran.innerHTML);
+			}
+			catch(err){
+				mon_ecran.innerHTML = "Erreur !";
+			}
+		}
+		</script>
+	</body>
+	<footer>
+		Copyright &copy; 2022, Clément PRIGENT. All rights reserved.
+	</footer>
+</html>
